@@ -13,7 +13,7 @@
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/UWS-Yellowjacket-TechnologyServicesImage.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Images/UWS-Yellowjacket-TechnologyServicesImage.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
 <body>
@@ -37,9 +37,10 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm custom-nav">
-            <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">Application name</a>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" runat="server" href="~/">
+                          <img src="/Images/UWSLogo_White.png" alt="Logo" width="154" height="60" class="d-inline-block align-text-top"></a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -53,6 +54,11 @@
                 </div>
             </div>
         </nav>
+        <header>
+            <div class="hero">
+
+            </div>
+        </header>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
