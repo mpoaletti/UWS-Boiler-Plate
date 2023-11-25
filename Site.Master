@@ -54,11 +54,7 @@
                 </div>
             </div>
         </nav>
-        <header>
-            <div class="hero">
 
-            </div>
-        </header>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
