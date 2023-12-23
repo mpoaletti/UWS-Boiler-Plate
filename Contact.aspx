@@ -22,7 +22,9 @@
         <asp:Button Text="Send" ID="btnSend" runat="server" OnClick="btnSend_Click" />
         <p>
             <asp:Label ID="lblOutput" runat="server"></asp:Label>
-            <asp:ListView ID="lvMessages" runat="server" DataSourceID="MessageDS" DataKeyNames="MessageID" InsertItemPosition="LastItem">
+
+            <%-- Sample form for read/write to database --%>
+<%--            <asp:ListView ID="lvMessages" runat="server" DataSourceID="MessageDS" DataKeyNames="MessageID" InsertItemPosition="LastItem">
                 <AlternatingItemTemplate>
                     <tr style="background-color: #FFFFFF; color: #284775;">
                         <td>
@@ -117,7 +119,7 @@
                     </tr>
                 </SelectedItemTemplate>
             </asp:ListView>
-            <asp:SqlDataSource runat="server" ID="MessageDS" ConnectionString="Data Source=uwsboilerplate.database.windows.net;Initial Catalog=uwsboilerplate;Persist Security Info=True;User ID=uwsboilerplate-server-admin;Password=NU2Y7YPNPEW6UQ72$" DeleteCommand="DELETE FROM [tblContactFormMessages] WHERE [MessageID] = @MessageID" InsertCommand="INSERT INTO [tblContactFormMessages] ([Name], [Message]) VALUES (@Name, @Message)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [tblContactFormMessages]" UpdateCommand="UPDATE [tblContactFormMessages] SET [Name] = @Name, [Message] = @Message WHERE [MessageID] = @MessageID">
+           <asp:SqlDataSource runat="server" ID="MessageDS" ConnectionString="" DeleteCommand="DELETE FROM [tblContactFormMessages] WHERE [MessageID] = @MessageID" InsertCommand="INSERT INTO [tblContactFormMessages] ([Name], [Message]) VALUES (@Name, @Message)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [tblContactFormMessages]" UpdateCommand="UPDATE [tblContactFormMessages] SET [Name] = @Name, [Message] = @Message WHERE [MessageID] = @MessageID">
                 <DeleteParameters>
                     <asp:Parameter Name="MessageID" Type="Int32"></asp:Parameter>
                 </DeleteParameters>
@@ -129,7 +131,7 @@
                     <asp:Parameter Name="Name" Type="String"></asp:Parameter>
                     <asp:Parameter Name="Message" Type="String"></asp:Parameter>
                 </UpdateParameters>
-            </asp:SqlDataSource>
+            </asp:SqlDataSource>--%>
         </p>
         </div>
 
