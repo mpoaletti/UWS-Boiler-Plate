@@ -30,8 +30,7 @@ body {
 }
 
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 15px;
 }
 
 .hero {
@@ -45,6 +44,10 @@ body {
     padding: 0;
 }
 
+.contact-form {
+    padding: 15px 0px;
+}
+
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,
@@ -55,7 +58,7 @@ textarea {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .body-content {
-        padding: 0;
+        padding: 15px;
     }
 }
 
