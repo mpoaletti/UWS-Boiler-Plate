@@ -1,4 +1,7 @@
-﻿using IdentityModel.Client;
+﻿using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
+using Azure.Core;
+using IdentityModel.Client;
 using Microsoft.AspNet.Identity;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
