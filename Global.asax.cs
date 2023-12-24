@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
+
 namespace UWS_Boiler_Plate
 {
     public class Global : HttpApplication

@@ -24,7 +24,7 @@
             <asp:Label ID="lblOutput" runat="server"></asp:Label>
 
             <%-- Sample form for read/write to database --%>
-<%--            <asp:ListView ID="lvMessages" runat="server" DataSourceID="MessageDS" DataKeyNames="MessageID" InsertItemPosition="LastItem">
+           <asp:ListView ID="lvMessages" runat="server" DataSourceID="MessageDS" DataKeyNames="MessageID" InsertItemPosition="LastItem">
                 <AlternatingItemTemplate>
                     <tr style="background-color: #FFFFFF; color: #284775;">
                         <td>
@@ -131,7 +131,7 @@
                     <asp:Parameter Name="Name" Type="String"></asp:Parameter>
                     <asp:Parameter Name="Message" Type="String"></asp:Parameter>
                 </UpdateParameters>
-            </asp:SqlDataSource>--%>
+            </asp:SqlDataSource>
         </p>
         </div>
 

@@ -16,6 +16,7 @@ using System.Configuration;
 //using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Web.Services.Description;
 //using System.Web;
 
 [assembly: OwinStartup(typeof(UWS_Boiler_Plate.Startup))]

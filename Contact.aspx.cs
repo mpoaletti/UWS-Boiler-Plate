@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Xml.Linq;
+using Azure.Security.KeyVault.Secrets;
+using Azure.Identity;
 
 namespace UWS_Boiler_Plate
 {
@@ -19,25 +21,39 @@ namespace UWS_Boiler_Plate
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["uwsboilerplate_test"].ConnectionString;
-            var insertStatement = "INSERT into tblContactFormMessages (Name, Message) values (@Name, @Message)";
-            using (var sqlConnection = new SqlConnection(connectionString))
+            string KeyVaultUrl = "https://https://uws-boilerplate-vault.vault.azure.net/";
+            string secretName = "VSConnectionString";
+
+            try
             {
-                sqlConnection.Open();
-                using (var sqlCommand = new SqlCommand(insertStatement, sqlConnection))
+                var client = new SecretClient(new Uri(KeyVaultUrl), new DefaultAzureCredential());
+                KeyVaultSecret secret = client.GetSecret(secretName);
+                string connectionString = secret.Value;
+                // var connectionString = ConfigurationManager.ConnectionStrings[""].ConnectionString;
+                var insertStatement = "INSERT into tblContactFormMessages (Name, Message) values (@Name, @Message)";
+                using (var sqlConnection = new SqlConnection(connectionString))
                 {
-                    sqlCommand.Parameters.AddWithValue("Name", cfMessage.Name);
-                    sqlCommand.Parameters.AddWithValue("Message", cfMessage.Message);
-                    sqlCommand.ExecuteNonQuery();
+                    sqlConnection.Open();
+                    using (var sqlCommand = new SqlCommand(insertStatement, sqlConnection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("Name", cfMessage.Name);
+                        sqlCommand.Parameters.AddWithValue("Message", cfMessage.Message);
+                        sqlCommand.ExecuteNonQuery();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                
+            }
+
         }
 
         // Uncomment after connecting to database
 
-        //protected void Page_PreRender(object sender, EventArgs e)
-        //{
-        //    lvMessages.DataBind();
-        //}
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            lvMessages.DataBind();
+        }
     }
 }
