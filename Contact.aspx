@@ -119,7 +119,7 @@
                     </tr>
                 </SelectedItemTemplate>
             </asp:ListView>
-           <asp:SqlDataSource runat="server" ID="MessageDS" ConnectionString="" DeleteCommand="DELETE FROM [tblContactFormMessages] WHERE [MessageID] = @MessageID" InsertCommand="INSERT INTO [tblContactFormMessages] ([Name], [Message]) VALUES (@Name, @Message)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [tblContactFormMessages]" UpdateCommand="UPDATE [tblContactFormMessages] SET [Name] = @Name, [Message] = @Message WHERE [MessageID] = @MessageID">
+            <asp:SqlDataSource runat="server" ID="MessageDS" ConnectionString='<%$ ConnectionStrings:uwsboilerplateConnectionString %>' DeleteCommand="DELETE FROM [tblContactFormMessages] WHERE [MessageID] = @MessageID" InsertCommand="INSERT INTO [tblContactFormMessages] ([Name], [Message]) VALUES (@Name, @Message)" ProviderName='<%$ ConnectionStrings:uwsboilerplateConnectionString.ProviderName %>' SelectCommand="SELECT * FROM [tblContactFormMessages]" UpdateCommand="UPDATE [tblContactFormMessages] SET [Name] = @Name, [Message] = @Message WHERE [MessageID] = @MessageID">
                 <DeleteParameters>
                     <asp:Parameter Name="MessageID" Type="Int32"></asp:Parameter>
                 </DeleteParameters>
@@ -130,6 +130,7 @@
                 <UpdateParameters>
                     <asp:Parameter Name="Name" Type="String"></asp:Parameter>
                     <asp:Parameter Name="Message" Type="String"></asp:Parameter>
+                    <asp:Parameter Name="MessageID" Type="Int32"></asp:Parameter>
                 </UpdateParameters>
             </asp:SqlDataSource>
         </p>

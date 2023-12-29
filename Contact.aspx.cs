@@ -21,7 +21,7 @@ namespace UWS_Boiler_Plate
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
-            string KeyVaultUrl = "https://https://uws-boilerplate-vault.vault.azure.net/";
+            string KeyVaultUrl = "https://uws-boilerplate-vault.vault.azure.net/";
             string secretName = "VSConnectionString";
 
             try

@@ -315,6 +315,7 @@
     <Content Include="Fonts\README.txt" />
     <Content Include="Global.asax" />
     <Content Include="Images\home-banner.png" />
+    <Content Include="Images\swooshLOGOrevSmall.jpg" />
     <Content Include="Images\UWSLogo_White.png" />
     <Content Include="Reports.aspx" />
     <Content Include="Fonts\Montserrat-Italic-VariableFont_wght.ttf" />
@@ -365,6 +366,7 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Login.aspx" />
     <None Include="Properties\PublishProfiles\UWSBoilerPlate - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -464,6 +466,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
