@@ -22,7 +22,7 @@ namespace UWS_Boiler_Plate
         protected void btnSend_Click(object sender, EventArgs e)
         {
             string KeyVaultUrl = "https://uws-boilerplate-vault.vault.azure.net/";
-            string secretName = "VSConnectionString";
+            string secretName = "MyConnectionString";
 
             try
             {
@@ -51,9 +51,9 @@ namespace UWS_Boiler_Plate
 
         // Uncomment after connecting to database
 
-        protected void Page_PreRender(object sender, EventArgs e)
-        {
-            lvMessages.DataBind();
-        }
+        //protected void Page_PreRender(object sender, EventArgs e)
+        //{
+        //    lvMessages.DataBind();
+        //}
     }
 }

@@ -23,7 +23,7 @@
         <p>
             <asp:Label ID="lblOutput" runat="server"></asp:Label>
 
-            <%-- Sample form for read/write to database --%>
+            <%-- Sample form for read/write to database 
            <asp:ListView ID="lvMessages" runat="server" DataSourceID="MessageDS" DataKeyNames="MessageID" InsertItemPosition="LastItem">
                 <AlternatingItemTemplate>
                     <tr style="background-color: #FFFFFF; color: #284775;">
@@ -119,7 +119,6 @@
                     </tr>
                 </SelectedItemTemplate>
             </asp:ListView>
-            <asp:SqlDataSource runat="server" ID="MessageDS" ConnectionString='<%$ ConnectionStrings:uwsboilerplateConnectionString %>' DeleteCommand="DELETE FROM [tblContactFormMessages] WHERE [MessageID] = @MessageID" InsertCommand="INSERT INTO [tblContactFormMessages] ([Name], [Message]) VALUES (@Name, @Message)" ProviderName='<%$ ConnectionStrings:uwsboilerplateConnectionString.ProviderName %>' SelectCommand="SELECT * FROM [tblContactFormMessages]" UpdateCommand="UPDATE [tblContactFormMessages] SET [Name] = @Name, [Message] = @Message WHERE [MessageID] = @MessageID">
                 <DeleteParameters>
                     <asp:Parameter Name="MessageID" Type="Int32"></asp:Parameter>
                 </DeleteParameters>
@@ -134,7 +133,7 @@
                 </UpdateParameters>
             </asp:SqlDataSource>
         </p>
-        </div>
+        </div> --%>
 
     </main>
 </asp:Content>
