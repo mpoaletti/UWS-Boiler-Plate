@@ -2,7 +2,7 @@
 
 <asp:Content ID="HeaderContent" ContentPlaceHolderID="HeaderContent" runat="server">
     <div class="hero" title="homepage banner image" aria-label="homepage banner image">
-
+        <textarea id="TextArea1" cols="20" rows="2"></textarea>
     </div>
 </asp:Content>
 

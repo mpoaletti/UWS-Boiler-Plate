@@ -29,7 +29,6 @@ namespace UWS_Boiler_Plate
                 SecretClient client = new SecretClient(new Uri(KeyVaultUrl), new DefaultAzureCredential());
                 KeyVaultSecret secret = client.GetSecret(secretName);
                 string connectionString = secret.Value;
-                // var connectionString = ConfigurationManager.ConnectionStrings[""].ConnectionString;
                 var insertStatement = "INSERT into tblContactFormMessages (Name, Message) values (@Name, @Message)";
                 using (var sqlConnection = new SqlConnection(connectionString))
                 {
@@ -47,6 +46,40 @@ namespace UWS_Boiler_Plate
                 
             }
 
+        }
+
+        protected void btnRetrieve_Click(object sender, EventArgs e)
+        {
+            string KeyVaultUrl = ConfigurationManager.AppSettings["KeyVaultUrl"];
+            string secretName = "MyConnectionString";
+            string inputName = txtName2.Text.Trim();
+
+            try
+            {
+                SecretClient client = new SecretClient(new Uri(KeyVaultUrl), new DefaultAzureCredential());
+                KeyVaultSecret secret = client.GetSecret(secretName);
+                string connectionString = secret.Value;
+                var insertStatement = "SELECT Message FROM tblContactFormMessages WHERE Name = @InputName";
+                using (var sqlConnection = new SqlConnection(connectionString))
+                {
+                    sqlConnection.Open();
+                    using (var sqlCommand = new SqlCommand(insertStatement, sqlConnection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@InputName", inputName);
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                lblMessages.Text = reader["Message"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
     }
