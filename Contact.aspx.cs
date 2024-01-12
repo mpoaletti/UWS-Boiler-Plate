@@ -21,12 +21,12 @@ namespace UWS_Boiler_Plate
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
-            string KeyVaultUrl = "https://uws-boilerplate-vault.vault.azure.net/";
+            string KeyVaultUrl = ConfigurationManager.AppSettings["KeyVaultUrl"];
             string secretName = "MyConnectionString";
 
             try
             {
-                var client = new SecretClient(new Uri(KeyVaultUrl), new DefaultAzureCredential());
+                SecretClient client = new SecretClient(new Uri(KeyVaultUrl), new DefaultAzureCredential());
                 KeyVaultSecret secret = client.GetSecret(secretName);
                 string connectionString = secret.Value;
                 // var connectionString = ConfigurationManager.ConnectionStrings[""].ConnectionString;
@@ -49,11 +49,5 @@ namespace UWS_Boiler_Plate
 
         }
 
-        // Uncomment after connecting to database
-
-        //protected void Page_PreRender(object sender, EventArgs e)
-        //{
-        //    lvMessages.DataBind();
-        //}
     }
 }

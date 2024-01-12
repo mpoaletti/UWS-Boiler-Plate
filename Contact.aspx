@@ -23,7 +23,7 @@
         <p>
             <asp:Label ID="lblOutput" runat="server"></asp:Label>
 
-            <%-- Sample form for read/write to database 
+            <%-- Sample form for read/write to database --%>
            <asp:ListView ID="lvMessages" runat="server" DataSourceID="MessageDS" DataKeyNames="MessageID" InsertItemPosition="LastItem">
                 <AlternatingItemTemplate>
                     <tr style="background-color: #FFFFFF; color: #284775;">
@@ -133,7 +133,7 @@
                 </UpdateParameters>
             </asp:SqlDataSource>
         </p>
-        </div> --%>
+        </div> 
 
     </main>
 </asp:Content>
