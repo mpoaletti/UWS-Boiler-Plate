@@ -38,7 +38,7 @@
 						&nbsp;&nbsp;<asp:TextBox ID="txtboxVerificationCode" runat="server" Width="200px" CausesValidation="True" ValidateRequestMode="Enabled" Visible="False"></asp:TextBox>
 						&nbsp;&nbsp; </td>
 					<td style="width: 265px; height: 35px;" class="text-justify">
-						<asp:Button ID="btnLogin" runat="server" Font-Names="Montserrat" Text="Login" OnClick="btnLogin_Click" Visible="True" />
+						<asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Visible="True" />
 						<br />
 						<asp:Button ID="btnVerify" runat="server" Font-Names="Montserrat" Text="Verify" OnClick="btnVerify_Click" Visible="False" />
 					</td>

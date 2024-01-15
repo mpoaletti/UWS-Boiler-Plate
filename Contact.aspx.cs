@@ -16,6 +16,11 @@ namespace UWS_Boiler_Plate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                btnSend.Attributes["title"] = "Click to send the message";
+                btnRetrieve.Attributes["title"] = "Click to retrieve the message";
+            }
 
         }
 

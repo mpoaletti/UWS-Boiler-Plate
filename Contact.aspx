@@ -19,7 +19,7 @@
         <div class="container contact-form">
         <h3>Send Us a Message</h3>
         <uc:ContactForm ID="cfMessage" runat="server" />
-        <asp:Button Text="Send" ID="btnSend" runat="server" OnClick="btnSend_Click" />
+        <asp:Button Text="Send" ID="btnSend" runat="server" OnClick="btnSend_Click" Visible="True" />
         <p>
             <asp:Label ID="lblOutput" runat="server"></asp:Label>
         </p>
@@ -27,8 +27,8 @@
 
         <div class="container message-box">
             <h3>View Sent Message</h3>
-            <p>Enter your name: </p><asp:TextBox runat="server" ID="txtName2" />
-            <asp:Button Text="Retrieve Message" ID="btnRetrieve" runat="server" OnClick="btnRetrieve_Click" />
+            <p>Enter your name: </p><asp:TextBox runat="server" ID="txtName2" ToolTip="Enter your name" />
+            <asp:Button ID="btnRetrieve" runat="server" Text="Retrieve Message" OnClick="btnRetrieve_Click" Visible="True" />
             <p>
                 <asp:Label ID="lblMessages" runat="server"></asp:Label>
             </p>
