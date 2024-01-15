@@ -21,8 +21,8 @@ namespace UWS_Boiler_Plate
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
-            string KeyVaultUrl = ConfigurationManager.AppSettings["KeyVaultUrl"];
-            string secretName = "MyConnectionString";
+            string KeyVaultUrl = ConfigurationManager.AppSettings["KeyVaultUrl"]; // Include the key name from web.config that is assigned the value of your Key Vault URL.
+            string secretName = "MyConnectionString"; // Replace "MyConnectionString" with the name of the secret you created in Key Vault that contains your connection string.
 
             try
             {
